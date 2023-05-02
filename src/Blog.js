@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import "../src/css/Blog.css";
 
 function Blog() {
+   const styles = {
+    textAlign: "center",
+  };
   const [posts, setPosts] = useState([]);
 
   const [title, setTitle] = useState("");
@@ -42,6 +45,7 @@ function Blog() {
         </button>
       </form>
       <hr />
+       <h1 style={styles}>Blogs</h1>
       <div className="posts-container">
         {posts.map((post, index) => (
           <div key={index} className="post-container">
