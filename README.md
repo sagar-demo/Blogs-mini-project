@@ -6,6 +6,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+Demo url(https://blogs-mini-project.vercel.app/)
+
+image:-![image](https://user-images.githubusercontent.com/64120304/235619996-7831dcd4-54f3-4561-b3a1-e43fc95131c7.png)
+
+
 ### `npm start`
 
 Runs the app in the development mode.\
