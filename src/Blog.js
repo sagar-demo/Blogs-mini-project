@@ -25,7 +25,7 @@ function Blog() {
 
   return (
     <div className="blog-container">
-      <h1>My Blog</h1>
+       <h1 style={styles}>Write a Blog!</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -37,7 +37,7 @@ function Blog() {
         <textarea
           value={content}
           onChange={(e) => setContent(e.target.value)}
-          placeholder="Write your blog post here..."
+          placeholder="your content goes here..."
           className="blog-textarea"
         />
         <button type="submit" className="blog-button">
