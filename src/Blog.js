@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import "../src/css/Blog.css";
 
 function Blog() {
-   const styles = {
+  const styles = {
     textAlign: "center",
   };
   const [posts, setPosts] = useState([]);
-
+  const TitleRef = useRef(null);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
@@ -15,6 +15,7 @@ function Blog() {
     setPosts([...posts, { title, content }]);
     setTitle("");
     setContent("");
+    TitleRef.current.focus();
   }
 
   function handleDelete(index) {
@@ -25,19 +26,20 @@ function Blog() {
 
   return (
     <div className="blog-container">
-       <h1 style={styles}>Write a Blog!</h1>
+      <h1 style={styles}>My Blog</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          ref={TitleRef}
           placeholder="Title"
           className="blog-input"
         />
         <textarea
           value={content}
           onChange={(e) => setContent(e.target.value)}
-          placeholder="your content goes here..."
+          placeholder="Write your blog post here..."
           className="blog-textarea"
         />
         <button type="submit" className="blog-button">
@@ -45,7 +47,7 @@ function Blog() {
         </button>
       </form>
       <hr />
-       <h1 style={styles}>Blogs</h1>
+      <h1 style={styles}>Blogs</h1>
       <div className="posts-container">
         {posts.map((post, index) => (
           <div key={index} className="post-container">
@@ -65,3 +67,4 @@ function Blog() {
 }
 
 export default Blog;
+
